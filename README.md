@@ -1,4 +1,4 @@
-# ponto
+# 🏦 ponto-cli - Access Ponto from the terminal
 
 [![CI](https://github.com/dedene/ponto-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/dedene/ponto-cli/actions/workflows/ci.yml)
 [![Go 1.23+](https://img.shields.io/badge/go-1.23+-00ADD8.svg)](https://go.dev/)
@@ -29,7 +29,8 @@ go install github.com/dedene/ponto-cli/cmd/ponto@latest
 
 ### From Releases
 
-Download the binary for your platform from [GitHub Releases](https://github.com/dedene/ponto-cli/releases).
+Download the binary for your platform from
+[GitHub Releases](https://github.com/dedene/ponto-cli/releases).
 
 ## Quick Start
 
@@ -132,12 +133,12 @@ ponto --enable-commands=accounts.list accounts list
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `PONTO_PROFILE` | Default profile name |
-| `PONTO_ENABLE_COMMANDS` | Comma-separated allowed commands |
-| `PONTO_KEYRING_BACKEND` | Keyring backend (auto/keychain/file) |
-| `PONTO_KEYRING_PASSWORD` | Password for file backend |
+| Variable                 | Description                          |
+| ------------------------ | ------------------------------------ |
+| `PONTO_PROFILE`          | Default profile name                 |
+| `PONTO_ENABLE_COMMANDS`  | Comma-separated allowed commands     |
+| `PONTO_KEYRING_BACKEND`  | Keyring backend (auto/keychain/file) |
+| `PONTO_KEYRING_PASSWORD` | Password for file backend            |
 
 ## Configuration
 
@@ -148,7 +149,7 @@ default_profile: live
 keyring_backend: auto
 profiles:
   default:
-    account_id: abc-123-def  # Default account for commands
+    account_id: abc-123-def # Default account for commands
   sandbox:
     account_id: sandbox-456
 ```
