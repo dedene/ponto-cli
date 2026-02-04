@@ -50,3 +50,20 @@ archives:
 
 checksum:
   name_template: checksums.txt
+
+brews:
+  - repository:
+      owner: dedene
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    commit_author:
+      name: Peter Dedene
+      email: peter@dedene.com
+    directory: Formula
+    homepage: https://github.com/dedene/ponto-cli
+    description: CLI for Ponto banking API - manage accounts, transactions, and syncs
+    license: MIT
+    install: |
+      bin.install "ponto"
+    test: |
+      system "#{bin}/ponto", "--version"
