@@ -1,0 +1,87 @@
+version: "2"
+
+linters:
+  default: none
+  enable:
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - contextcheck
+    - dupword
+    - errcheck
+    - errorlint
+    - goconst
+    - gocritic
+    - gosec
+    - govet
+    - ineffassign
+    - misspell
+    - nilerr
+    - noctx
+    - prealloc
+    - revive
+    - staticcheck
+    - unparam
+    - unused
+    - wastedassign
+    - whitespace
+
+  settings:
+    goconst:
+      min-len: 3
+      min-occurrences: 4
+    revive:
+      rules:
+        - name: blank-imports
+        - name: empty-lines
+        - name: errorf
+        - name: import-shadowing
+        - name: range
+        - name: unnecessary-stmt
+    govet:
+      enable-all: true
+      disable:
+        - fieldalignment
+
+  exclusions:
+    presets:
+      - std-error-handling
+    rules:
+      - path: _test\.go
+        linters:
+          - errcheck
+          - gosec
+          - goconst
+      - path: internal/cmd/.*\.go
+        linters:
+          - errcheck
+      - path: internal/api/.*\.go
+        linters:
+          - bodyclose
+      - path: internal/api/transport\.go
+        linters:
+          - gosec
+        text: "G404"
+      - path: internal/auth/.*\.go
+        linters:
+          - gosec
+        text: "G101"
+      - path: internal/config/.*\.go
+        linters:
+          - gosec
+        text: "G304"
+      - linters:
+          - errcheck
+        text: "Error return value of `fmt\\.Fprint"
+      - linters:
+          - errcheck
+        text: "Error return value of .*.Close"
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/dedene/ponto-cli

@@ -1,6 +1,8 @@
 # Binary
 /ponto
+/bin/
 /dist/
+/.tools/
 
 # IDE
 .idea/

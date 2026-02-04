@@ -1,0 +1,52 @@
+version: 2
+
+project_name: ponto-cli
+
+changelog:
+  disable: true
+
+builds:
+  - id: ponto
+    main: ./cmd/ponto
+    binary: ponto
+    ldflags: >-
+      -s -w
+      -X github.com/dedene/ponto-cli/internal/cmd.version={{ .Tag }}
+      -X github.com/dedene/ponto-cli/internal/cmd.commit={{ .ShortCommit }}
+      -X github.com/dedene/ponto-cli/internal/cmd.date={{ .Date }}
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - windows_amd64
+      - windows_arm64
+  - id: ponto_darwin
+    main: ./cmd/ponto
+    binary: ponto
+    ldflags: >-
+      -s -w
+      -X github.com/dedene/ponto-cli/internal/cmd.version={{ .Tag }}
+      -X github.com/dedene/ponto-cli/internal/cmd.commit={{ .ShortCommit }}
+      -X github.com/dedene/ponto-cli/internal/cmd.date={{ .Date }}
+    env:
+      - CGO_ENABLED=1
+    targets:
+      - darwin_amd64
+      - darwin_arm64
+
+archives:
+  - id: default
+    ids:
+      - ponto
+      - ponto_darwin
+    formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: checksums.txt
