@@ -172,6 +172,16 @@ ponto pending-transactions list
 
 **Resolution order:** flag → config → auto-detect (if single account)
 
+## Claude Code Skill
+
+Install as a Claude Code skill:
+
+```bash
+npx skills add dedene/ponto-cli
+```
+
+This enables Claude to use the CLI for banking data access and transaction management.
+
 ## License
 
 MIT
