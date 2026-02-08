@@ -172,15 +172,13 @@ ponto pending-transactions list
 
 **Resolution order:** flag → config → auto-detect (if single account)
 
-## Claude Code Skill
+## Agent Skill
 
-Install as a Claude Code skill:
+This CLI is available as an [open agent skill](https://skills.sh/) for AI assistants including [Claude Code](https://claude.ai/code), [OpenClaw](https://openclaw.ai/), Cursor, and GitHub Copilot:
 
 ```bash
 npx skills add dedene/ponto-cli
 ```
-
-This enables Claude to use the CLI for banking data access and transaction management.
 
 ## License
 
