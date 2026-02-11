@@ -7,6 +7,14 @@
 
 A command-line interface for the [Ponto](https://myponto.com) banking API.
 
+## Agent Skill
+
+This CLI is available as an [open agent skill](https://skills.sh/) for AI assistants including [Claude Code](https://claude.ai/code), [OpenClaw](https://openclaw.ai/), [Codex](https://github.com/openai/codex), Cursor, GitHub Copilot, and [35+ agents](https://github.com/vercel-labs/skills#supported-agents).
+
+```bash
+npx skills add dedene/ponto-cli
+```
+
 ## Features
 
 - Account information (list, get, balances)
@@ -171,14 +179,6 @@ ponto pending-transactions list
 ```
 
 **Resolution order:** flag → config → auto-detect (if single account)
-
-## Agent Skill
-
-This CLI is available as an [open agent skill](https://skills.sh/) for AI assistants including [Claude Code](https://claude.ai/code), [OpenClaw](https://openclaw.ai/), Cursor, and GitHub Copilot:
-
-```bash
-npx skills add dedene/ponto-cli
-```
 
 ## License
 
