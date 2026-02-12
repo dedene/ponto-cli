@@ -192,3 +192,10 @@ export PONTO_PROFILE=sandbox
 - Banking data is sensitive -- avoid logging transaction details unnecessarily.
 - Syncs may take time to complete -- poll status if needed.
 - Rate limits apply -- the CLI handles retries automatically.
+
+
+## Installation
+
+```bash
+brew install dedene/tap/ponto-cli
+```
