@@ -5,6 +5,28 @@ description: >
   view transactions, export transaction history to CSV/JSON, check account balances, trigger
   bank syncs, view pending transactions, or automate banking data workflows. Triggered by
   mentions of Ponto, bank accounts, transactions, banking API, or financial data export.
+license: MIT
+homepage: https://github.com/dedene/ponto-cli
+metadata:
+  author: dedene
+  version: "1.1.0"
+  openclaw:
+    primaryEnv: PONTO_PROFILE
+    requires:
+      env:
+        - PONTO_PROFILE
+        - PONTO_ENABLE_COMMANDS
+        - PONTO_KEYRING_BACKEND
+      bins:
+        - ponto
+    install:
+      - kind: brew
+        tap: dedene/tap
+        formula: ponto-cli
+        bins: [ponto]
+      - kind: go
+        package: github.com/dedene/ponto-cli/cmd/ponto
+        bins: [ponto]
 ---
 
 # ponto-cli
